@@ -10,7 +10,6 @@ The following inputs can be set.
 | ------------ | --------- | ----------- |
 | file         | data.lsif | The output file. |
 | project_root | `.`       | The root of the project (where package.json is located). |
-| verbose      | false     | Print indexer progress to stdout. |
 
 The following is a complete example that uses the [upload action](https://github.com/sourcegraph/lsif-upload-action) to upload the generated data to [sourcegraph.com](https://sourcegraph.com).
 
@@ -25,8 +24,6 @@ jobs:
       - uses: actions/checkout@v1
       - name: Generate LSIF data
         uses: sourcegraph/lsif-node-action@master
-        with:
-          verbose: 'true'
       - name: Upload LSIF data
         uses: sourcegraph/lsif-upload-action@master
         continue-on-error: true
