@@ -5,7 +5,7 @@ if [ -z "$OUT" ]; then
     exit 1
 fi
 
-ABS_OUT=`realpath "$OUT"`
+ABS_OUT="$(cd "$(dirname "${OUT}")" && pwd)/$(basename "${OUT}")"
 cd "${PROJECT_ROOT}"
 /lsif-node/tsc/bin/lsif-tsc -p . --noContents --stdout | /lsif-node/npm/bin/lsif-npm -p . --stdin --out "${ABS_OUT}"
 cd -
