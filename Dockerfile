@@ -1,7 +1,7 @@
 FROM node:13.3.0-alpine3.10 as builder
 
 # The commit at which to build lsif-npm and lsif-tsc
-ENV INDEXER_COMMIT=e71e4db3b05895f4d88a64c7f3d5558621460622
+ENV INDEXER_COMMIT=711ad719a2d66d946be7dd4e6a322b3716d29d62
 ENV CLONE_URL="https://github.com/sourcegraph/lsif-node.git"
 
 RUN apk add --no-cache git=2.22.2-r0
