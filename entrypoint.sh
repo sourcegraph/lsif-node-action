@@ -6,6 +6,6 @@ if [ -z "$OUT" ]; then
 fi
 
 ABS_OUT=`realpath "$OUT"`
-pushd "${PROJECT_ROOT}"
+cd "${PROJECT_ROOT}"
 /lsif-node/tsc/bin/lsif-tsc -p . --noContents --stdout | /lsif-node/npm/bin/lsif-npm -p . --stdin --out "${ABS_OUT}"
-popd
+cd -
