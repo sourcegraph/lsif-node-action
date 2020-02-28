@@ -5,4 +5,7 @@ if [ -z "$OUT" ]; then
     exit 1
 fi
 
-lsif-tsc --out "$OUT" -p "${PROJECT_ROOT}"
+ABS_OUT="$(cd "$(dirname "${OUT}")" && pwd)/$(basename "${OUT}")"
+cd "${PROJECT_ROOT}"
+lsif-tsc --out "${ABS_OUT}" -p .
+cd -
