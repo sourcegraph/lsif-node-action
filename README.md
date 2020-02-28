@@ -1,6 +1,6 @@
-# Sourcegraph Node LSIF Indexer GitHub Action
+# Sourcegraph TypeScript LSIF Indexer GitHub Action
 
-This action generate LSIF data from TypeScript source code. See the [LSIF node indexer](https://github.com/sourcegraph/lsif-node) for more details.
+This action generate LSIF data from TypeScript source code. See the [LSIF TypeScript indexer](https://github.com/sourcegraph/lsif-node) for more details.
 
 ## Usage
 
@@ -8,8 +8,8 @@ The following inputs can be set.
 
 | name         | default   | description |
 | ------------ | --------- | ----------- |
-| file         | data.lsif | The output file. |
-| project_root | `.`       | The root of the project (where package.json is located). |
+| file         | dump.lsif | The output file. |
+| project_root | `.`       | The root of the project (where tsconfig.json is located). |
 
 The following is a complete example that uses the [upload action](https://github.com/sourcegraph/lsif-upload-action) to upload the generated data to [sourcegraph.com](https://sourcegraph.com).
 
@@ -18,7 +18,7 @@ name: LSIF
 on:
   - push
 jobs:
-  build:
+  index:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1

@@ -1,4 +1,4 @@
-name: Sourcegraph Node LSIF Indexer
+name: Sourcegraph TypeScript LSIF Indexer
 description: Generate LSIF data from TypeScript source code
 author: Sourcegraph
 branding:
@@ -8,13 +8,10 @@ branding:
 inputs:
   file:
     description: The output filename.
-    default: data.lsif
+    default: dump.lsif
   project_root: 
-    description: The project root.
+    description: The root of the project (where tsconfig.json is located).
     default: .
-  verbose:
-    description: Set to true to log indexer progress
-    default: ''
 
 runs:
   using: docker
