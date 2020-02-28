@@ -11,7 +11,7 @@ The following inputs can be set.
 | file         | dump.lsif | The output file. |
 | project_root | `.`       | The root of the project (where tsconfig.json is located). |
 
-The following is a complete example that uses the [upload action](https://github.com/sourcegraph/lsif-upload-action) to upload the generated data to [sourcegraph.com](https://sourcegraph.com).
+The following is a complete example that uses the [upload action](https://github.com/sourcegraph/lsif-upload-action) to upload the generated data to [sourcegraph.com](https://sourcegraph.com). Put this in `.github/workflows/lsif.yaml`.
 
 ```
 name: LSIF
@@ -20,14 +20,15 @@ on:
 jobs:
   index:
     runs-on: ubuntu-latest
+    container: node:13.8.0-alpine3.10
     steps:
       - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: yarn
       - name: Generate LSIF data
         uses: sourcegraph/lsif-node-action@master
       - name: Upload LSIF data
         uses: sourcegraph/lsif-upload-action@master
-        continue-on-error: true
         with:
-          endpoint: https://sourcegraph.com
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
