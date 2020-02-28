@@ -1,7 +1,10 @@
 FROM node:13.3.0-alpine3.10
 
-# The npm version to install lsif-tsc
-ENV INDEXER_VERSION='0.5.4'
+ENV INDEXER_VERSION=0.5.4
+
+RUN apk add --no-cache \
+    # Needed by the indexer to populate defaults
+    git=2.22.2-r0
 
 LABEL version="0.1.0"
 LABEL repository="http://github.com/sourcegraph/lsif-node-action"
