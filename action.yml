@@ -22,4 +22,4 @@ runs:
   env:
     OUT: ${{ inputs.file }}
     PROJECT_ROOT: ${{ inputs.project_root }}
-    FLAGS: ${{ input.flags }}
+    FLAGS: ${{ inputs.flags }}
