@@ -1,6 +1,6 @@
 FROM node:13.3.0-alpine3.10
 
-ENV INDEXER_VERSION=0.5.4
+ENV INDEXER_VERSION=0.5.5
 
 RUN apk add --no-cache \
     # Needed by the indexer to populate defaults
