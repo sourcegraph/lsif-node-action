@@ -7,5 +7,5 @@ fi
 
 ABS_OUT="$(cd "$(dirname "${OUT}")" && pwd)/$(basename "${OUT}")"
 cd "${PROJECT_ROOT}"
-lsif-tsc --out "${ABS_OUT}" -p .
+lsif-tsc --out "${ABS_OUT}" ${FLAGS}
 cd -

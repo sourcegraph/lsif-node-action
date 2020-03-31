@@ -10,6 +10,7 @@ The following inputs can be set.
 | ------------ | --------- | ----------- |
 | file         | dump.lsif | The output file (relative to the repository root). |
 | project_root | `.`       | The root of the project (where tsconfig.json is located). |
+| flags        | `-p .`    | The flags to pass to the indexer. |
 
 The following is a complete example that uses the [upload action](https://github.com/sourcegraph/lsif-upload-action) to upload the generated data to [sourcegraph.com](https://sourcegraph.com). Put this in `.github/workflows/lsif.yaml`.
 

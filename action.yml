@@ -12,6 +12,9 @@ inputs:
   project_root: 
     description: The root of the project (where tsconfig.json is located).
     default: .
+  flags:
+    description: The flags to pass to the indexer.
+    default: '-p .'
 
 runs:
   using: docker
@@ -19,3 +22,4 @@ runs:
   env:
     OUT: ${{ inputs.file }}
     PROJECT_ROOT: ${{ inputs.project_root }}
+    FLAGS: ${{ input.flags }}
