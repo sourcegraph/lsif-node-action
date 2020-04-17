@@ -4,7 +4,7 @@ ENV INDEXER_VERSION=0.5.5
 
 RUN apk add --no-cache \
     # Needed by the indexer to populate defaults
-    git=2.22.2-r0
+    git
 
 LABEL version="0.1.0"
 LABEL repository="http://github.com/sourcegraph/lsif-node-action"
